@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join My Gym</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>🏋️‍♂️ Join My Gym</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="plans.html">Plans</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Become a Member</h2>
+        <form id="registerForm">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="number" name="age" placeholder="Age" required />
+            <input type="text" name="phone" placeholder="Phone Number" required />
+            <input type="text" name="package" placeholder="Package Name (Basic/Pro/Elite)" required />
+            <input type="text" name="workout" placeholder="Workout Goal (Weight Loss/Gain)" />
+            <input type="text" name="diet" placeholder="Diet Plan (Veg/Non-Veg)" />
+            <button type="submit">Register</button>
+        </form>
+        <p id="responseMsg"></p>
+    </section>
+
+    <footer>
+        <p>© 2025 My Gym. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("registerForm");
+        const msg = document.getElementById("responseMsg");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const res = await fetch("http://localhost:5000/api/members", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+                msg.innerText = "✅ Member registered successfully!";
+                form.reset();
+            } else {
+                msg.innerText = "❌ Registration failed. Try again.";
+            }
+        });
+    </script>
+</body>
+
+</html>

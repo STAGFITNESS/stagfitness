@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Member List</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>📋 Gym Members</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <section class="members">
+        <h2>Registered Members</h2>
+        <table id="membersTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Package</th>
+                    <th>Workout</th>
+                    <th>Diet</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>© 2025 My Gym. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function loadMembers() {
+            const res = await fetch("http://localhost:5000/api/members");
+            const members = await res.json();
+            const tableBody = document.querySelector("#membersTable tbody");
+            tableBody.innerHTML = "";
+
+            members.forEach((m) => {
+                const row = `
+          <tr>
+            <td>${m.name}</td>
+            <td>${m.age}</td>
+            <td>${m.phone}</td>
+            <td>${m.package}</td>
+            <td>${m.workout}</td>
+            <td>${m.diet}</td>
+          </tr>
+        `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        loadMembers();
+    </script>
+</body>
+
+</html>
