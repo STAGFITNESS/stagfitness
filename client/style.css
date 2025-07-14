@@ -14,6 +14,8 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     color: var(--color-text);
+    margin: 0;
+    background: linear-gradient(to right, oklch(57.532% 0.00365 16.278), oklch(57.052% 0.01112 17.164));
 }
 
 /* Heading sizes */
@@ -49,27 +51,7 @@ h2 {
     /* Darker cherry red */
 }
 
-
-/* General Reset */
-body {
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to right, oklch(57.532% 0.00365 16.278), oklch(57.052% 0.01112 17.164));
-        /* dark grey */
-        color: #ffffff;
-    }
-
-}
-
 /* Header */
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
 header {
     background-color: #111;
     color: rgb(233, 5, 5);
@@ -98,7 +80,6 @@ nav a {
 
 nav a:hover {
     color: #f31515;
-    /* Red on hover */
 }
 
 /* Hero Section */
@@ -131,7 +112,7 @@ nav a:hover {
 }
 
 .hero h1 span {
-    color: #facc15;
+    color: #ed2613;
 }
 
 .hero-text {
@@ -213,7 +194,8 @@ nav a:hover {
 .features {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f7f7f7;
+    background-color: #111;
+    color: white;
 }
 
 .features h2 {
@@ -235,6 +217,8 @@ nav a:hover {
     width: 300px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    color: #111;
+    /* Force readable dark text */
 }
 
 .feature-card:hover {
@@ -244,6 +228,11 @@ nav a:hover {
 .feature-card img {
     width: 60px;
     margin-bottom: 20px;
+}
+
+.feature-card h3,
+.feature-card p {
+    color: #111;
 }
 
 /* Plans Section */
@@ -268,6 +257,7 @@ nav a:hover {
     width: 250px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s;
+    color: #111;
 }
 
 .plan-card:hover {
@@ -281,6 +271,12 @@ nav a:hover {
 .plan-card ul {
     text-align: left;
     padding-left: 20px;
+}
+
+.plan-card h3,
+.plan-card p,
+.plan-card ul li {
+    color: #111;
 }
 
 /* Form Section */
@@ -321,7 +317,7 @@ form button {
     font-weight: bold;
 }
 
-/* Members Table (Admin Page) */
+/* Members Table */
 .members table {
     margin: 30px auto;
     border-collapse: collapse;
@@ -348,6 +344,7 @@ footer {
     color: white;
 }
 
+/* WhatsApp Button */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -369,6 +366,7 @@ footer {
     transform: scale(1.1);
 }
 
+/* Contact Section */
 .contact-options {
     background-color: #fff;
     padding: 60px 20px;
@@ -412,6 +410,7 @@ footer {
     font-weight: bold;
 }
 
+/* About Section */
 .about-section {
     padding: 60px 20px;
     background-color: #1c1c1c;
@@ -425,28 +424,18 @@ footer {
     margin-bottom: 20px;
 }
 
-.about-section p {
+.about-section p,
+.about-section li {
+    color: #eee;
     font-size: 1.1rem;
     max-width: 800px;
     margin: auto;
     line-height: 1.6;
 }
 
-.about-section ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-}
-
-.about-section li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
 
-    /* 1. Layout stacking */
     .hero,
     .features,
     .gallery {
@@ -454,25 +443,21 @@ footer {
         text-align: center;
     }
 
-    /* 2. Reduce hero heading size */
     .hero-text h1 {
         font-size: 2.5rem;
     }
 
-    /* 3. Make images scale to screen */
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* 4. Add padding around sections */
     .hero,
     .gallery,
     .features {
         padding: 20px;
     }
 
-    /* 5. Stack navigation links vertically */
     nav {
         flex-direction: column;
         align-items: center;
@@ -483,10 +468,9 @@ footer {
     }
 }
 
-/* NAVIGATION BAR – final */
+/* Navigation Bar */
 nav {
     background-color: #333333;
-    /* dark grey */
 }
 
 nav ul {
@@ -502,7 +486,7 @@ nav li {
 }
 
 nav a {
-    color: #ffffff;
+    color: #555353;
     padding: 12px 16px;
     text-decoration: none;
     display: inline-flex;
@@ -511,11 +495,7 @@ nav a {
 }
 
 nav a:hover,
-nav a:focus {
-    background-color: #d2042d;
-    color: #ffffff;
-}
-
+nav a:focus,
 nav a.active {
     background-color: #d2042d;
     color: #ffffff;
