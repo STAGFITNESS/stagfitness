@@ -1,3 +1,55 @@
+/* STYLE GUIDE */
+
+/* Color palette */
+:root {
+    --color-bg: #333333;
+    /* Dark grey */
+    --color-text: #ffffff;
+    /* White */
+    --color-accent: #d2042d;
+    /* Cherry red */
+}
+
+/* Font styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--color-text);
+}
+
+/* Heading sizes */
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Section spacing */
+.section {
+    padding: 60px 20px;
+}
+
+/* Button styling */
+.button,
+.btn-join {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.button:hover,
+.btn-join:hover {
+    background-color: #a0181f;
+    /* Darker cherry red */
+}
+
+
 /* General Reset */
 body {
     body {
