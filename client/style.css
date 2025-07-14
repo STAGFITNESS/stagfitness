@@ -536,3 +536,23 @@ nav a.active {
     color: #ffffff !important;
     /* Ensures white text over dark background */
 }
+
+.hero {
+    position: relative;
+}
+
+/* Add a semi‑transparent dark layer */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    z-index: 0;
+}
+
+/* Ensure all hero content sits above overlay */
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
