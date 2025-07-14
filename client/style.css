@@ -105,14 +105,16 @@ nav a:hover {
 .hero {
     background: radial-gradient(circle, rgba(255, 0, 0, 0.15) 1px, transparent 1px),
         linear-gradient(to right, #111111, #1c1c1c);
-    background-size: 30px 30px;
-    background-repeat: repeat;
-    padding: 100px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+    color: var(--color-text);
+    /* ensures white text */
 }
+
+.hero-text p,
+.hero-text h1 {
+    color: var(--color-text);
+    /* white for readability */
+}
+
 
 .hero-content {
     display: flex;
@@ -261,14 +263,19 @@ nav a:hover {
     margin-top: 20px;
 }
 
-.plan-card {
-    background: #f7f7f7;
-    border-radius: 15px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+.plans .plan-card {
+    background: var(--color-bg);
+    /* dark grey background */
+    color: var(--color-text);
+    /* white text for contrast */
 }
+
+/* Ensure headings inside plan-cards stand out */
+.plans .plan-card h3 {
+    color: var(--color-accent);
+    /* cherry red headings */
+}
+
 
 .plan-card:hover {
     transform: scale(1.05);
