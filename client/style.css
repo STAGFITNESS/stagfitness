@@ -520,3 +520,9 @@ nav a.active {
     background-color: #d2042d;
     color: #ffffff;
 }
+
+.hero h1,
+.hero-text p {
+    color: #ffffff !important;
+    /* Ensure white text */
+}
