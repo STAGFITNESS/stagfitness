@@ -526,3 +526,13 @@ nav a.active {
     color: #ffffff !important;
     /* Ensure white text */
 }
+
+.hero h2,
+/* If subtitle is an h2 */
+.hero .subtitle,
+/* Or if it has a class 'subtitle' */
+.hero p {
+    /* Or the <p> where it appears */
+    color: #ffffff !important;
+    /* Ensures white text over dark background */
+}
